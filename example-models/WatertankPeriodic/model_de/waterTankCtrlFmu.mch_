@@ -1,0 +1,74 @@
+MACHINE controller 
+SETS
+    PC = {read, decide, write}
+
+VARIABLES
+        fmiLevel,
+        fmiPump,
+        level ,
+        time  ,
+        pump ,
+        pc  
+
+CONSTANTS 
+   High, Low, ReadDelay, WriteDelay, ComputeDelay
+
+PROPERTIES
+   High = 2000 & Low = 800 & ReadDelay = 20 & WriteDelay= 20 &  ComputeDelay = 100          
+
+INVARIANT
+  time : 0..12000 &
+  pump : BOOL &
+  level : 0..20000 &
+  fmiLevel : NATURAL &
+  fmiPump : BOOL &
+  pc : PC
+
+INITIALISATION 
+  time :=  0 ||
+  level :=  0  ||
+  pump :=  FALSE  ||
+  fmiLevel :: NATURAL  ||
+  fmiPump :: BOOL  ||
+  pc :=  read 
+
+OPERATIONS
+
+  set = BEGIN
+          fmiLevel :: NATURAL
+        END;
+
+  get(r) = PRE r = fmiPump THEN skip END;
+
+/*  initTime(t) = ANY t WHERE t : 0..12000 THEN time := t END;
+*/
+  commit(t) = PRE t = time THEN skip END;
+
+  decide = 
+    PRE
+      pc = decide 
+    THEN
+      IF level>High THEN pump := FALSE
+       ELSIF level < Low THEN pump := TRUE END || 
+      time :=  time + ComputeDelay ||
+      pc :=  write 
+    END;
+
+  read  = 
+    PRE
+      pc = read
+    THEN
+      level :=  fmiLevel ||
+      time :=  time + ReadDelay ||
+      pc :=  decide 
+    END;
+
+  write = 
+    PRE
+      pc = write 
+    THEN
+      time :=  time + WriteDelay ||
+      pc :=  read 
+    END
+
+  END
