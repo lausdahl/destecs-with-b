@@ -1,0 +1,110 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+
+
+	<groupId>org.destecs.core</groupId>
+	<artifactId>prob-co-sim</artifactId>
+	<name>Prob Co Simulation Animator</name>
+	<version>0.0.1</version>
+
+	<properties>
+		<destecs.version>2.0.0-SNAPSHOT</destecs.version>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>prob-cobra</id>
+			<name>prob-cobra</name>
+			<url>http://cobra.cs.uni-duesseldorf.de/artifactory/repo</url>
+		</repository>
+
+		<repository>
+			<id>destecs-repo</id>
+			<name>DESTECS-build-repo-iha.dk</name>
+			<url>http://build.overturetool.org/builds/destecs-m2repo</url>
+		</repository>
+
+	</repositories>
+
+	<dependencies>
+
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.prob</groupId>
+			<artifactId>de.prob.core.kernel</artifactId>
+			<version>2.0.0-milestone-13-SNAPSHOT</version>
+		</dependency>
+
+
+
+
+		<dependency>
+			<groupId>org.destecs.core</groupId>
+			<artifactId>protocol</artifactId>
+			<version>${destecs.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.xmlrpc</groupId>
+			<artifactId>xmlrpc-server</artifactId>
+			<version>3.1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.destecs.core.xmlrpcextensions</groupId>
+			<artifactId>xmlrpcserverextension</artifactId>
+			<version>${destecs.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.destecs.core</groupId>
+			<artifactId>parsers</artifactId>
+			<version>${destecs.version}</version>
+		</dependency>
+
+
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>prob.destecs.CoSim</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.1</version>
+				<configuration>
+					<attach>true</attach>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
+		</plugins>
+	</build>
+</project>

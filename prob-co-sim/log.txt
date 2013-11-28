@@ -1,0 +1,246 @@
+2013-11-13 21:55:10,410 1384 [XML-RPC-0] INFO  de.prob.cli.PrologProcessProvider Method: makeProcess Line: 52 - Starting ProB's Prolog Core. Path is C:\Users\kel\.prob\probcli.exe
+2013-11-13 21:55:10,419 1393 [XML-RPC-0] DEBUG de.prob.cli.PrologProcessProvider Method: makeProcess Line: 54 - Cli started
+2013-11-13 21:55:10,872 1846 [XML-RPC-0] DEBUG de.prob.cli.ProBInstanceProvider Method: analyseStdout Line: 105 - Apply cli detection patterns to No file to process
+2013-11-13 21:55:10,872 1846 [XML-RPC-0] DEBUG de.prob.cli.ProBInstanceProvider Method: analyseStdout Line: 105 - Apply cli detection patterns to Starting Socket Server
+2013-11-13 21:55:10,872 1846 [XML-RPC-0] DEBUG de.prob.cli.ProBInstanceProvider Method: analyseStdout Line: 105 - Apply cli detection patterns to Application Path: c:/users/kel/.prob
+2013-11-13 21:55:10,872 1846 [XML-RPC-0] DEBUG de.prob.cli.ProBInstanceProvider Method: analyseStdout Line: 105 - Apply cli detection patterns to Port: 63291
+2013-11-13 21:55:10,873 1847 [XML-RPC-0] INFO  de.prob.cli.PortPattern Method: setValue Line: 34 - Server has startet and listens on port 63291
+2013-11-13 21:55:10,873 1847 [XML-RPC-0] DEBUG de.prob.cli.ProBInstanceProvider Method: analyseStdout Line: 105 - Apply cli detection patterns to probcli revision: no revision found
+2013-11-13 21:55:10,873 1847 [XML-RPC-0] DEBUG de.prob.cli.ProBInstanceProvider Method: analyseStdout Line: 105 - Apply cli detection patterns to user interrupt reference id: 16496
+2013-11-13 21:55:10,873 1847 [XML-RPC-0] INFO  de.prob.cli.InterruptRefPattern Method: setValue Line: 32 - Server can receive user interrupts via reference 16496
+2013-11-13 21:55:10,874 1848 [XML-RPC-0] DEBUG de.prob.cli.ProBConnection Method: connect Line: 38 - Connecting to port 63291 using key c17a318a8e972896
+2013-11-13 21:55:10,874 1848 [XML-RPC-0] DEBUG de.prob.cli.ProBConnection Method: connect Line: 45 - Connected
+2013-11-13 21:55:10,876 1850 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - -- starting command loop --
+2013-11-13 21:55:10,900 1874 [XML-RPC-0] TRACE de.prob.scripting.ClassicalBFactory Method: parseFile Line: 148 - Parsing main file 'C:\overture\runtime-destecs.product-1\WatertankPeriodic\model_de\waterTankCtrl.mch'
+2013-11-13 21:55:11,183 2157 [XML-RPC-0] TRACE de.prob.scripting.ClassicalBFactory Method: parseAllMachines Line: 132 - Done parsing 'C:\overture\runtime-destecs.product-1\WatertankPeriodic\model_de\waterTankCtrl.mch'
+2013-11-13 21:55:11,262 2236 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - load_classical_b([abstract_machine(1,machine(2),machine_header(3,controller,[]),[sets(4,[enumerated_set(5,'PC',[identifier(6,read),identifier(7,compute),identifier(8,write)]),enumerated_set(9,'LPC',[identifier(10,lread),identifier(11,ldecide),identifier(12,lwrite)])]),variables(13,[identifier(14,fmiLevel),identifier(15,fmiPump),identifier(16,level),identifier(17,time),identifier(18,pump),identifier(19,pc),identifier(20,lpc)]),constants(21,[identifier(22,'High'),identifier(23,'Low'),identifier(24,'ReadDelay'),identifier(25,'WriteDelay'),identifier(26,'ComputeDelay')]),properties(27,conjunct(28,conjunct(29,conjunct(30,conjunct(31,equal(32,identifier(33,'High'),integer(34,7000)),equal(35,identifier(36,'Low'),integer(37,4000))),equal(38,identifier(39,'ReadDelay'),integer(40,20))),equal(41,identifier(42,'WriteDelay'),integer(43,20))),equal(44,identifier(45,'ComputeDelay'),integer(46,100)))),invariant(47,conjunct(48,conjunct(49,conjunct(50,conjunct(51,conjunct(52,conjunct(53,member(54,identifier(55,time),interval(56,integer(57,0),integer(58,12000000))),member(59,identifier(60,pump),bool_set(61))),member(62,identifier(63,level),interval(64,integer(65,0),integer(66,200000)))),member(67,identifier(68,fmiLevel),natural_set(69))),member(70,identifier(71,fmiPump),bool_set(72))),member(73,identifier(74,pc),identifier(75,'PC'))),member(76,identifier(77,lpc),identifier(78,'LPC')))),initialisation(79,parallel(80,[assign(81,[identifier(82,time)],[integer(83,0)]),assign(84,[identifier(85,level)],[integer(86,0)]),assign(87,[identifier(88,pump)],[boolean_false(89)]),becomes_element_of(90,[identifier(91,fmiLevel)],natural_set(92)),becomes_element_of(93,[identifier(94,fmiPump)],bool_set(95)),assign(96,[identifier(97,pc)],[identifier(98,read)]),assign(99,[identifier(100,lpc)],[identifier(101,lread)])])),operations(102,[operation(103,identifier(103,fmiReadInputs),[],[identifier(104,l)],precondition(105,member(106,identifier(107,l),natural_set(108)),parallel(109,[assign(110,[identifier(111,fmiLevel)],[identifier(112,l)]),assign(113,[identifier(114,pc)],[identifier(115,compute)])]))),operation(116,identifier(116,fmiWriteOutputs),[],[],precondition(117,equal(118,identifier(119,pc),identifier(120,write)),parallel(121,[assign(122,[identifier(123,fmiPump)],[identifier(124,pump)]),assign(125,[identifier(126,pc)],[identifier(127,read)])]))),operation(128,identifier(128,switchOn),[],[],precondition(129,conjunct(130,conjunct(131,less_equal(132,identifier(133,level),identifier(134,'Low')),equal(135,identifier(136,pc),identifier(137,compute))),equal(138,identifier(139,lpc),identifier(140,ldecide))),parallel(141,[assign(142,[identifier(143,pump)],[boolean_true(144)]),assign(145,[identifier(146,time)],[add(147,identifier(148,time),identifier(149,'ComputeDelay'))]),assign(150,[identifier(151,lpc)],[identifier(152,lwrite)])]))),operation(153,identifier(153,switchOff),[],[],precondition(154,conjunct(155,conjunct(156,greater_equal(157,identifier(158,level),identifier(159,'High')),equal(160,identifier(161,pc),identifier(162,compute))),equal(163,identifier(164,lpc),identifier(165,ldecide))),parallel(166,[assign(167,[identifier(168,pump)],[boolean_false(169)]),assign(170,[identifier(171,time)],[add(172,identifier(173,time),identifier(174,'ComputeDelay'))]),assign(175,[identifier(176,lpc)],[identifier(177,lwrite)])]))),operation(178,identifier(178,switchKeep),[],[],precondition(179,conjunct(180,conjunct(181,conjunct(182,greater(183,identifier(184,level),identifier(185,'Low')),less(186,identifier(187,level),identifier(188,'High'))),equal(189,identifier(190,pc),identifier(191,compute))),equal(192,identifier(193,lpc),identifier(194,ldecide))),parallel(195,[assign(196,[identifier(197,time)],[add(198,identifier(199,time),identifier(200,'ComputeDelay'))]),assign(201,[identifier(202,lpc)],[identifier(203,lwrite)])]))),operation(204,identifier(204,readLevel),[],[],precondition(205,equal(206,identifier(207,pc),identifier(208,compute)),parallel(209,[assign(210,[identifier(211,level)],[identifier(212,fmiLevel)]),assign(213,[identifier(214,time)],[add(215,identifier(216,time),identifier(217,'ReadDelay'))]),assign(218,[identifier(219,lpc)],[identifier(220,ldecide)])]))),operation(221,identifier(221,writePump),[],[],precondition(222,conjunct(223,equal(224,identifier(225,pc),identifier(226,compute)),equal(227,identifier(228,lpc),identifier(229,lwrite))),parallel(230,[assign(231,[identifier(232,time)],[add(233,identifier(234,time),identifier(235,'WriteDelay'))]),assign(236,[identifier(237,pc)],[identifier(238,write)]),assign(239,[identifier(240,lpc)],[identifier(241,lread)])])))])])]),start_animation,true.
+
+2013-11-13 21:55:11,277 2251 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes([])
+2013-11-13 21:55:11,278 2252 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Connected: 127.0.0.1
+2013-11-13 21:55:11,278 2252 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - loading counter foreign resource
+2013-11-13 21:55:11,295 2269 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:11,295 2269 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+2013-11-13 21:55:11,298 2272 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - register_prob2_formula(formula_1,eval(identifier(none,fmiLevel),'#EXPRESSION',fmiLevel)),true.
+
+2013-11-13 21:55:11,298 2272 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes([])
+2013-11-13 21:55:11,299 2273 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:11,299 2273 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+2013-11-13 21:55:11,300 2274 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - register_prob2_formula(formula_2,eval(identifier(none,fmiPump),'#EXPRESSION',fmiPump)),true.
+
+2013-11-13 21:55:11,300 2274 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes([])
+2013-11-13 21:55:11,300 2274 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:11,301 2275 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+2013-11-13 21:55:11,301 2275 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - register_prob2_formula(formula_3,eval(identifier(none,level),'#EXPRESSION',level)),true.
+
+2013-11-13 21:55:11,302 2276 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes([])
+2013-11-13 21:55:11,302 2276 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:11,302 2276 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+2013-11-13 21:55:11,303 2277 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - register_prob2_formula(formula_4,eval(identifier(none,time),'#EXPRESSION',time)),true.
+
+2013-11-13 21:55:11,303 2277 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes([])
+2013-11-13 21:55:11,304 2278 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:11,304 2278 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+2013-11-13 21:55:11,304 2278 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - register_prob2_formula(formula_5,eval(identifier(none,pump),'#EXPRESSION',pump)),true.
+
+2013-11-13 21:55:11,305 2279 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes([])
+2013-11-13 21:55:11,305 2279 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:11,306 2280 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+2013-11-13 21:55:11,306 2280 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - register_prob2_formula(formula_6,eval(identifier(none,pc),'#EXPRESSION',pc)),true.
+
+2013-11-13 21:55:11,306 2280 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes([])
+2013-11-13 21:55:11,307 2281 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:11,307 2281 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+2013-11-13 21:55:11,307 2281 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - register_prob2_formula(formula_7,eval(identifier(none,lpc),'#EXPRESSION',lpc)),true.
+
+2013-11-13 21:55:11,308 2282 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes([])
+2013-11-13 21:55:11,308 2282 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:11,308 2282 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+2013-11-13 21:55:11,320 2294 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - computeOperationsForState(root,APLOps),eval_registered_formulas(root,[formula_2,formula_4,formula_3,formula_7,formula_6,formula_1,formula_5],BResults),state_property(initialised,root,CPropResult),state_property(invariantKO,root,DPropResult),state_property(max_operations_reached,root,EPropResult),state_property(timeout_occurred,root,FPropResult),op_timeout_occurred(root,GTO),get_state_errors(root,HErrors),true.
+
+2013-11-13 21:55:11,322 2296 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('GTO',[]),'.'(=('APLOps','.'(op(0,'$setup_constants',root,0,'.'(int(7000),'.'(int(4000),'.'(int(20),'.'(int(20),'.'(int(100),[]))))),'.'('7000','.'('4000','.'('20','.'('20','.'('100',[]))))),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 )'),[])),'.'(=('FPropResult',false),'.'(=('EPropResult',false),'.'(=('DPropResult',false),'.'(=('CPropResult',false),'.'(=('BResults',[]),'.'(=('HErrors',[]),[])))))))))
+2013-11-13 21:55:11,322 2296 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - % found_enumeration_of_constants(0,0)
+2013-11-13 21:55:11,322 2296 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - % backtrack(found_enumeration_of_constants(0,0))
+2013-11-13 21:55:11,322 2296 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - OpsSTAndIDs: [(0,$setup_constants(int(7000),int(4000),int(20),int(20),int(100)),0)]
+2013-11-13 21:55:11,326 2300 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:11,326 2300 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+2013-11-13 21:55:11,341 2315 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - computeOperationsForState(0,APLOps),eval_registered_formulas(0,[formula_2,formula_4,formula_3,formula_7,formula_6,formula_1,formula_5],BResults),state_property(initialised,0,CPropResult),state_property(invariantKO,0,DPropResult),state_property(max_operations_reached,0,EPropResult),state_property(timeout_occurred,0,FPropResult),op_timeout_occurred(0,GTO),get_state_errors(0,HErrors),true.
+
+2013-11-13 21:55:11,344 2318 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('GTO',[]),'.'(=('APLOps','.'(op(1,'$initialise_machine',0,1,'.'(int(0),'.'(int(0),'.'(pred_false,'.'(int(0),'.'(pred_true,'.'(fd(1,'PC'),'.'(fd(1,'LPC'),[]))))))),'.'('0','.'('0','.'('FALSE','.'('0','.'('TRUE','.'(read,'.'(lread,[]))))))),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=0 &\n       fmiPump=TRUE &\n       pc=read &\n       lpc=lread )'),'.'(op(2,'$initialise_machine',0,2,'.'(int(0),'.'(int(0),'.'(pred_false,'.'(int(0),'.'(pred_false,'.'(fd(1,'PC'),'.'(fd(1,'LPC'),[]))))))),'.'('0','.'('0','.'('FALSE','.'('0','.'('FALSE','.'(read,'.'(lread,[]))))))),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=0 &\n       fmiPump=FALSE &\n       pc=read &\n       lpc=lread )'),[]))),'.'(=('FPropResult',false),'.'(=('EPropResult',true),'.'(=('DPropResult',false),'.'(=('CPropResult',false),'.'(=('BResults',[]),'.'(=('HErrors',[]),[])))))))))
+2013-11-13 21:55:11,344 2318 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - ### Warning: enumerating NATURAL : NATURAL : inf:sup ---> -1:3
+2013-11-13 21:55:11,344 2318 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - OpsSTAndIDs: [(1,$initialise_machine(int(0),int(0),pred_false,int(0),pred_true,fd(1,PC),fd(1,LPC)),1),(2,$initialise_machine(int(0),int(0),pred_false,int(0),pred_false,fd(1,PC),fd(1,LPC)),2)]
+2013-11-13 21:55:11,349 2323 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:11,350 2324 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+2013-11-13 21:55:11,351 2325 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - computeOperationsForState(2,APLOps),eval_registered_formulas(2,[formula_2,formula_4,formula_3,formula_7,formula_6,formula_1,formula_5],BResults),state_property(initialised,2,CPropResult),state_property(invariantKO,2,DPropResult),state_property(max_operations_reached,2,EPropResult),state_property(timeout_occurred,2,FPropResult),op_timeout_occurred(2,GTO),get_state_errors(2,HErrors),true.
+
+2013-11-13 21:55:11,355 2329 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('GTO','.'(fmiReadInputs,[])),'.'(=('APLOps','.'(op(3,fmiReadInputs,2,3,'.'(int(0),[]),'.'('0',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=0 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),'.'(op(4,fmiReadInputs,2,4,'.'(int(1),[]),'.'('1',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=1 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),'.'(op(5,fmiReadInputs,2,5,'.'(int(2),[]),'.'('2',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=2 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),'.'(op(6,fmiReadInputs,2,6,'.'(int(3),[]),'.'('3',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=3 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),[]))))),'.'(=('FPropResult',false),'.'(=('EPropResult',false),'.'(=('DPropResult',false),'.'(=('CPropResult',true),'.'(=('BResults','.'(result('FALSE','',fmiPump),'.'(result('0','',time),'.'(result('0','',level),'.'(result(lread,'',lpc),'.'(result(read,'',pc),'.'(result('0','',fmiLevel),'.'(result('FALSE','',pump),[])))))))),'.'(=('HErrors',[]),[])))))))))
+2013-11-13 21:55:11,355 2329 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - ### Warning: enumerating l : INTEGER : inf:sup ---> -1:3
+2013-11-13 21:55:11,355 2329 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - % time_out_for_node(2,fmiReadInputs,virtual_time_out)
+2013-11-13 21:55:11,355 2329 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - OpsSTAndIDs: [(3,fmiReadInputs(int(0)),3),(4,fmiReadInputs(int(1)),4),(5,fmiReadInputs(int(2)),5),(6,fmiReadInputs(int(3)),6)]
+2013-11-13 21:55:11,355 2329 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,356 2330 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - FALSE
+2013-11-13 21:55:11,356 2330 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,356 2330 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - 0
+2013-11-13 21:55:11,356 2330 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,356 2330 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - 0
+2013-11-13 21:55:11,356 2330 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,356 2330 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - lread
+2013-11-13 21:55:11,356 2330 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,356 2330 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - read
+2013-11-13 21:55:11,357 2331 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,361 2335 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - 0
+2013-11-13 21:55:11,361 2335 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,361 2335 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - FALSE
+2013-11-13 21:55:11,361 2335 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:11,364 2338 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+2013-11-13 21:55:11,663 2637 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - computeOperationsForState(4,APLOps),eval_registered_formulas(4,[formula_2,formula_4,formula_3,formula_7,formula_6,formula_1,formula_5],BResults),state_property(initialised,4,CPropResult),state_property(invariantKO,4,DPropResult),state_property(max_operations_reached,4,EPropResult),state_property(timeout_occurred,4,FPropResult),op_timeout_occurred(4,GTO),get_state_errors(4,HErrors),true.
+
+2013-11-13 21:55:11,667 2641 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('GTO','.'(fmiReadInputs,[])),'.'(=('APLOps','.'(op(7,fmiReadInputs,4,3,'.'(int(0),[]),'.'('0',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=0 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),'.'(op(8,fmiReadInputs,4,4,'.'(int(1),[]),'.'('1',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=1 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),'.'(op(9,fmiReadInputs,4,5,'.'(int(2),[]),'.'('2',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=2 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),'.'(op(10,fmiReadInputs,4,6,'.'(int(3),[]),'.'('3',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=3 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),'.'(op(11,readLevel,4,7,[],[],[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=20 &\n       level=1 &\n       pump=FALSE &\n       fmiLevel=1 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=ldecide )'),[])))))),'.'(=('FPropResult',false),'.'(=('EPropResult',false),'.'(=('DPropResult',false),'.'(=('CPropResult',true),'.'(=('BResults','.'(result('FALSE','',fmiPump),'.'(result('0','',time),'.'(result('0','',level),'.'(result(lread,'',lpc),'.'(result(compute,'',pc),'.'(result('1','',fmiLevel),'.'(result('FALSE','',pump),[])))))))),'.'(=('HErrors',[]),[])))))))))
+2013-11-13 21:55:11,667 2641 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - ### Warning: enumerating l : INTEGER : inf:sup ---> -1:3
+2013-11-13 21:55:11,667 2641 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - % time_out_for_node(4,fmiReadInputs,virtual_time_out)
+2013-11-13 21:55:11,667 2641 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - OpsSTAndIDs: [(7,fmiReadInputs(int(0)),3),(8,fmiReadInputs(int(1)),4),(9,fmiReadInputs(int(2)),5),(10,fmiReadInputs(int(3)),6),(11,readLevel,7)]
+2013-11-13 21:55:11,667 2641 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,667 2641 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - FALSE
+2013-11-13 21:55:11,667 2641 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,667 2641 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - 0
+2013-11-13 21:55:11,668 2642 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,668 2642 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - 0
+2013-11-13 21:55:11,668 2642 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,668 2642 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - lread
+2013-11-13 21:55:11,668 2642 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,668 2642 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - compute
+2013-11-13 21:55:11,668 2642 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,668 2642 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - 1
+2013-11-13 21:55:11,668 2642 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,668 2642 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - FALSE
+2013-11-13 21:55:11,671 2645 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:11,672 2646 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+2013-11-13 21:55:11,674 2648 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - computeOperationsForState(6,APLOps),eval_registered_formulas(6,[formula_2,formula_4,formula_3,formula_7,formula_6,formula_1,formula_5],BResults),state_property(initialised,6,CPropResult),state_property(invariantKO,6,DPropResult),state_property(max_operations_reached,6,EPropResult),state_property(timeout_occurred,6,FPropResult),op_timeout_occurred(6,GTO),get_state_errors(6,HErrors),true.
+
+2013-11-13 21:55:11,677 2651 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('GTO','.'(fmiReadInputs,[])),'.'(=('APLOps','.'(op(12,fmiReadInputs,6,3,'.'(int(0),[]),'.'('0',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=0 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),'.'(op(13,fmiReadInputs,6,4,'.'(int(1),[]),'.'('1',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=1 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),'.'(op(14,fmiReadInputs,6,5,'.'(int(2),[]),'.'('2',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=2 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),'.'(op(15,fmiReadInputs,6,6,'.'(int(3),[]),'.'('3',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=3 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),'.'(op(16,readLevel,6,8,[],[],[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=20 &\n       level=3 &\n       pump=FALSE &\n       fmiLevel=3 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=ldecide )'),[])))))),'.'(=('FPropResult',false),'.'(=('EPropResult',false),'.'(=('DPropResult',false),'.'(=('CPropResult',true),'.'(=('BResults','.'(result('FALSE','',fmiPump),'.'(result('0','',time),'.'(result('0','',level),'.'(result(lread,'',lpc),'.'(result(compute,'',pc),'.'(result('3','',fmiLevel),'.'(result('FALSE','',pump),[])))))))),'.'(=('HErrors',[]),[])))))))))
+2013-11-13 21:55:11,677 2651 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - ### Warning: enumerating l : INTEGER : inf:sup ---> -1:3
+2013-11-13 21:55:11,677 2651 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - % time_out_for_node(6,fmiReadInputs,virtual_time_out)
+2013-11-13 21:55:11,678 2652 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - OpsSTAndIDs: [(12,fmiReadInputs(int(0)),3),(13,fmiReadInputs(int(1)),4),(14,fmiReadInputs(int(2)),5),(15,fmiReadInputs(int(3)),6),(16,readLevel,8)]
+2013-11-13 21:55:11,678 2652 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,678 2652 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - FALSE
+2013-11-13 21:55:11,678 2652 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,678 2652 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - 0
+2013-11-13 21:55:11,678 2652 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,678 2652 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - 0
+2013-11-13 21:55:11,678 2652 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,678 2652 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - lread
+2013-11-13 21:55:11,678 2652 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,679 2653 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - compute
+2013-11-13 21:55:11,679 2653 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,679 2653 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - 3
+2013-11-13 21:55:11,679 2653 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:11,679 2653 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - FALSE
+2013-11-13 21:55:11,682 2656 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:11,682 2656 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+time=0.0 pump=true level=0
+2013-11-13 21:55:12,026 3000 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - execute_custom_operations(6,fmiReadInputs,equal(none,identifier(none,l),integer(none,0)),1,NewStateID,Errors),true.
+
+2013-11-13 21:55:12,027 3001 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),'.'(=('NewStateID','.'(op(12,fmiReadInputs,6,3,'.'(int(0),[]),'.'('0',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=0 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),[])),[])))
+2013-11-13 21:55:12,028 3002 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:12,028 3002 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - checking
+2013-11-13 21:55:12,029 3003 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - l = 0
+2013-11-13 21:55:12,029 3003 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - checked
+2013-11-13 21:55:12,029 3003 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+2013-11-13 21:55:12,029 3003 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - computeOperationsForState(3,APLOps),eval_registered_formulas(3,[formula_2,formula_4,formula_3,formula_7,formula_6,formula_1,formula_5],BResults),state_property(initialised,3,CPropResult),state_property(invariantKO,3,DPropResult),state_property(max_operations_reached,3,EPropResult),state_property(timeout_occurred,3,FPropResult),op_timeout_occurred(3,GTO),get_state_errors(3,HErrors),true.
+
+2013-11-13 21:55:12,033 3007 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - ### Warning: enumerating l : INTEGER : inf:sup ---> -1:3
+2013-11-13 21:55:12,033 3007 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('GTO','.'(fmiReadInputs,[])),'.'(=('APLOps','.'(op(17,fmiReadInputs,3,3,'.'(int(0),[]),'.'('0',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=0 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),'.'(op(18,fmiReadInputs,3,4,'.'(int(1),[]),'.'('1',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=1 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),'.'(op(19,fmiReadInputs,3,5,'.'(int(2),[]),'.'('2',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=2 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),'.'(op(20,fmiReadInputs,3,6,'.'(int(3),[]),'.'('3',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=0 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=3 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lread )'),'.'(op(21,readLevel,3,9,[],[],[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=20 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=0 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=ldecide )'),[])))))),'.'(=('FPropResult',false),'.'(=('EPropResult',false),'.'(=('DPropResult',false),'.'(=('CPropResult',true),'.'(=('BResults','.'(result('FALSE','',fmiPump),'.'(result('0','',time),'.'(result('0','',level),'.'(result(lread,'',lpc),'.'(result(compute,'',pc),'.'(result('0','',fmiLevel),'.'(result('FALSE','',pump),[])))))))),'.'(=('HErrors',[]),[])))))))))
+2013-11-13 21:55:12,033 3007 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - % time_out_for_node(3,fmiReadInputs,virtual_time_out)
+2013-11-13 21:55:12,034 3008 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - OpsSTAndIDs: [(17,fmiReadInputs(int(0)),3),(18,fmiReadInputs(int(1)),4),(19,fmiReadInputs(int(2)),5),(20,fmiReadInputs(int(3)),6),(21,readLevel,9)]
+2013-11-13 21:55:12,034 3008 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:12,034 3008 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - FALSE
+2013-11-13 21:55:12,034 3008 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:12,034 3008 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - 0
+2013-11-13 21:55:12,034 3008 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:12,034 3008 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - 0
+2013-11-13 21:55:12,034 3008 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:12,034 3008 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - lread
+2013-11-13 21:55:12,034 3008 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:12,035 3009 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - compute
+2013-11-13 21:55:12,035 3009 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:12,035 3009 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - 0
+2013-11-13 21:55:12,035 3009 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:12,035 3009 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - FALSE
+2013-11-13 21:55:12,037 3011 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:12,038 3012 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+2013-11-13 21:55:12,039 3013 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - execute_custom_operations(3,readLevel,equal(none,boolean_true(none),boolean_true(none)),1,NewStateID,Errors),true.
+
+2013-11-13 21:55:12,040 3014 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),'.'(=('NewStateID','.'(op(21,readLevel,3,9,[],[],[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=20 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=0 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=ldecide )'),[])),[])))
+2013-11-13 21:55:12,041 3015 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - checking
+2013-11-13 21:55:12,041 3015 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:12,041 3015 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - /* truth */ TRUE = TRUE
+2013-11-13 21:55:12,041 3015 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - checked
+2013-11-13 21:55:12,041 3015 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+2013-11-13 21:55:12,042 3016 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - computeOperationsForState(9,APLOps),eval_registered_formulas(9,[formula_2,formula_4,formula_3,formula_7,formula_6,formula_1,formula_5],BResults),state_property(initialised,9,CPropResult),state_property(invariantKO,9,DPropResult),state_property(max_operations_reached,9,EPropResult),state_property(timeout_occurred,9,FPropResult),op_timeout_occurred(9,GTO),get_state_errors(9,HErrors),true.
+
+2013-11-13 21:55:12,046 3020 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('GTO','.'(fmiReadInputs,[])),'.'(=('APLOps','.'(op(22,fmiReadInputs,9,9,'.'(int(0),[]),'.'('0',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=20 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=0 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=ldecide )'),'.'(op(23,fmiReadInputs,9,10,'.'(int(1),[]),'.'('1',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=20 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=1 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=ldecide )'),'.'(op(24,fmiReadInputs,9,11,'.'(int(2),[]),'.'('2',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=20 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=2 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=ldecide )'),'.'(op(25,fmiReadInputs,9,12,'.'(int(3),[]),'.'('3',[]),[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=20 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=3 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=ldecide )'),'.'(op(26,switchOn,9,13,[],[],[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=120 &\n       level=0 &\n       pump=TRUE &\n       fmiLevel=0 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=lwrite )'),'.'(op(27,readLevel,9,14,[],[],[],'( High=7000 &\n       Low=4000 &\n       ReadDelay=20 &\n       WriteDelay=20 &\n       ComputeDelay=100 &\n       time=40 &\n       level=0 &\n       pump=FALSE &\n       fmiLevel=0 &\n       fmiPump=FALSE &\n       pc=compute &\n       lpc=ldecide )'),[]))))))),'.'(=('FPropResult',false),'.'(=('EPropResult',false),'.'(=('DPropResult',false),'.'(=('CPropResult',true),'.'(=('BResults','.'(result('FALSE','',fmiPump),'.'(result('20','',time),'.'(result('0','',level),'.'(result(ldecide,'',lpc),'.'(result(compute,'',pc),'.'(result('0','',fmiLevel),'.'(result('FALSE','',pump),[])))))))),'.'(=('HErrors',[]),[])))))))))
+2013-11-13 21:55:12,046 3020 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - ### Warning: enumerating l : INTEGER : inf:sup ---> -1:3
+2013-11-13 21:55:12,046 3020 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - % time_out_for_node(9,fmiReadInputs,virtual_time_out)
+2013-11-13 21:55:12,046 3020 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - OpsSTAndIDs: [(22,fmiReadInputs(int(0)),9),(23,fmiReadInputs(int(1)),10),(24,fmiReadInputs(int(2)),11),(25,fmiReadInputs(int(3)),12),(26,switchOn,13),(27,readLevel,14)]
+2013-11-13 21:55:12,046 3020 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:12,046 3020 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - FALSE
+2013-11-13 21:55:12,046 3020 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:12,046 3020 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - 20
+2013-11-13 21:55:12,046 3020 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:12,046 3020 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - 0
+2013-11-13 21:55:12,046 3020 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:12,046 3020 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - ldecide
+2013-11-13 21:55:12,046 3020 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:12,047 3021 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - compute
+2013-11-13 21:55:12,047 3021 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:12,047 3021 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - 0
+2013-11-13 21:55:12,047 3021 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - Expression Value = 
+2013-11-13 21:55:12,047 3021 [Thread-2] DEBUG de.prob.cli.ProBInstance Method: readAndLog Line: 54 - FALSE
+2013-11-13 21:55:12,049 3023 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:12,050 3024 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+2013-11-13 21:55:12,051 3025 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - execute_custom_operations(9,decide,equal(none,boolean_true(none),boolean_true(none)),1,NewStateID,Errors),true.
+
+2013-11-13 21:55:12,051 3025 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - no
+2013-11-13 21:55:12,052 3026 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 63 - getErrorMessages(Errors),true.
+
+2013-11-13 21:55:12,052 3026 [XML-RPC-0] INFO  de.prob.cli.ProBConnection Method: send Line: 76 - yes('.'(=('Errors',[]),[]))
+de.prob.parser.ResultParserException: Prolog query unexpectedly failed: execute_custom_operations(9,decide,equal(none,boolean_true(none),boolean_true(none)),1,NewStateID,Errors),true.
+
+	at de.prob.parser.PrologTermGenerator.toPrologTermMustNotFail(PrologTermGenerator.java:65)
+	at de.prob.parser.BindingGenerator.createBindingMustNotFail(BindingGenerator.java:41)
+	at de.prob.animator.CommandProcessor.sendCommand(CommandProcessor.java:39)
+	at de.prob.animator.AnimatorImpl.execute(AnimatorImpl.java:55)
+	at de.prob.statespace.StateSpace.opFromPredicate(StateSpace.java:252)
+	at prob.destecs.SimulationManager.callOperation(SimulationManager.java:221)
+	at prob.destecs.SimulationManager.callOperation(SimulationManager.java:214)
+	at prob.destecs.SimulationManager.step(SimulationManager.java:175)
+	at prob.destecs.CoSimImpl.step(CoSimImpl.java:186)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Total steps taken: 1
+The VDM interpreter is terminating now...
